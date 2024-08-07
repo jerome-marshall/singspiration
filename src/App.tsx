@@ -1,6 +1,4 @@
 import { RevealSlides } from "react-reveal-slides"
-import RevealNotes from "reveal.js/plugin/notes/notes"
-import RevealZoom from "reveal.js/plugin/zoom/zoom"
 import "./App.css"
 import SongComponent from "./components/SongComponent"
 import {
@@ -43,7 +41,6 @@ function App() {
       <RevealSlides
         theme="white"
         controlsLayout="bottom-right"
-        plugins={[RevealZoom, RevealNotes]}
         onStateChange={(newState) => {
           setState(newState)
         }}
