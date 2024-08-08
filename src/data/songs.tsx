@@ -182,7 +182,7 @@ export const maraven: Song = {
         { ...tatTara, singer: "boys" },
         { text: "(உம்) உள்ளங்கைகளில் என்னை வரைந்து" },
         { ...tatTara, singer: "boys" },
-        { text: "உன்தன் கண்மணி போலென்னை காக்கின்றீர்" },
+        { text: "உன்தன் கண்மணி போலென்னை காக்கின்றீர்", times: 2 },
         { text: "Aaa Aaa Aaa", singer: "boys", textClassName: "small-text" },
       ],
     },
@@ -264,7 +264,7 @@ export const dhayavu: Song = {
         text: "Oooooooo.....", times: 2
       },
       {
-        text: "Mmmm Mmmm.....", times: 2
+        text: "Aa Aaaa.....", times: 4
       },
     ],
   },
