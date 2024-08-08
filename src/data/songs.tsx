@@ -326,7 +326,7 @@ export const dhayavu: Song = {
           text: "Oooooooo.....", times: 2
         },
         {
-          text: "Mmmm Mmmmm.....", times: 2
+          text: "Aa Aaaaa.....", times: 4
         },
       ],
     }
@@ -337,7 +337,7 @@ export const aseervadham: Song = {
   title: "ஆசீர்வாதம் [The Blessing]",
   stanzas: [
     {
-      lines: [{ text: "ஆமென், ஆமென், ஆமென்" }],
+      lines: [{ text: "ஆமென், ஆமென், ஆமென்" , times: 2}],
     },
     {
       lines: [
@@ -384,7 +384,7 @@ export const aseervadham: Song = {
       ],
     },
     {
-      lines: [{ text: "ஆமென், ஆமென், ஆமென்" }],
+      lines: [{ text: "ஆமென், ஆமென், ஆமென்", times: 2 }],
     },
   ],
   chorus: null,
