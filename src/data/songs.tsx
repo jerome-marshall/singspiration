@@ -115,8 +115,8 @@ export const adhiMangalaKararane: Song = {
           singer: "girls2",
           alternateLines: { boys: "ப ம க" },
         },
-        { text: "ப த நீ த ச ரி நீ" },
-        { text: "ச ரி க ப ப த நீ ரி ச", times: 2 },
+        { text: "ப த நீ த ச ரி நீ" , singer: "girls"},
+        { text: "ச ரி க ப ப த நீ ரி ச", times: 2, singer: "boys" },
       ],
     },
     {
