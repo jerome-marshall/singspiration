@@ -94,6 +94,7 @@ const SongComponent: React.FC<SongProps> = ({ song }) => {
           {renderStanza(stanza, index)}
           {song.chorusFrequency === "afterEachStanza" &&
             !stanza.noNextChorus &&
+            stanza.type !== "interlude" &&
             renderChorus()}
         </React.Fragment>
       ))}

@@ -12,21 +12,25 @@ export interface Stanza {
   lines: Line[]
   times?: number
   noNextChorus?: boolean
+  type?: "stanza" | "interlude" | "bridge" | "vocals"
 }
 
 export interface Chorus {
   lines: Line[]
   times?: number
+  type?: "chorus"
 }
 
 export interface Intro {
   lines: Line[]
   times?: number
+  type?: "intro"
 }
 
 export interface Ending {
   lines: Line[]
   times?: number
+  type?: "ending"
 }
 
 export interface Line {

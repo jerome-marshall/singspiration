@@ -1,9 +1,26 @@
-import { Ending, Intro, Song } from "../types"
+import { Ending, Intro, Line, Song, Stanza } from "../types"
 
 export const karthaneEnThunai: Song = {
   title: "கர்த்தனே எம் துணையானீர்",
   startWithChorus: true,
   chorusFrequency: "afterEachStanza",
+  intro: {
+    lines: [
+      {
+        text: "[ INTRO ]",
+      },
+      {
+        text: "Rumpumpaa, rumpumpaa, rumpumpaa",
+        singer: "boys",
+        times: 2,
+      },
+      {
+        text: "Aaa aaa aaa, Aaa aaa aaa, Aaa aaa aaa",
+        singer: "girls",
+        times: 2,
+      },
+    ],
+  },
   chorus: {
     lines: [
       { text: "கர்த்தனே எம் துணையானீர்" },
@@ -36,6 +53,24 @@ export const karthaneEnThunai: Song = {
         { text: "ஐயா உம்மைப்போல, எங்கும் கண்டதில்லை" },
       ],
     },
+    {
+      noNextChorus: true,
+      lines: [
+        {
+          text: "[ OUTRO ]",
+        },
+        {
+          text: "Rumpumpaa, rumpumpaa, rumpumpaa",
+          singer: "boys",
+          times: 2,
+        },
+        {
+          text: "Aaa aaa aaa, Aaa aaa aaa, Aaa aaa aaa",
+          singer: "girls",
+          times: 2,
+        },
+      ],
+    }
   ],
 }
 
@@ -53,8 +88,8 @@ export const adhiMangalaKararane: Song = {
   title: "அதி மங்கல காரணனே",
   chorusFrequency: "none",
   startWithChorus: true,
-  intro: ADHIMANGALA_VOCALS,
-  ending: ADHIMANGALA_VOCALS,
+  intro: ADHIMANGALA_VOCALS as Intro,
+  ending: ADHIMANGALA_VOCALS as Ending,
   chorus: {
     lines: [
       { text: "அதி மங்கல காரணனே" },
@@ -113,15 +148,28 @@ const tatTara = {
   singer: "boys",
   textClassName: "small-text",
 }
+const maravenInterlude: Stanza = {
+  type: "interlude",
+  lines: [
+    {
+      text: "[ INTERLUDE ]",
+    },
+    {
+      text: "La la la la la",
+      times: 4,
+    },
+  ],
+}
+const maravenChorusLines: Line[] = [
+  { text: "மறவேன் மறவேன் நீர் செய்த நன்மைகள்" },
+  { text: "துதிப்பேன் துதிப்பேன் என் முழு இதயத்தோடு", times: 2 },
+  { text: "என் கர்த்தர் நல்லவர்.. மிக மிக நல்லவர்" },
+  { text: "என்னை விசாரிக்கும் நல் தகப்பனவர்", times: 2 },
+]
 export const maraven: Song = {
   title: "மறவேன்",
   chorus: {
-    lines: [
-      { text: "மறவேன் மறவேன் நீர் செய்த நன்மைகள்" },
-      { text: "துதிப்பேன் துதிப்பேன் என் முழு இதயத்தோடு", times: 2 },
-      { text: "என் கர்த்தர் நல்லவர்.. மிக மிக நல்லவர்" },
-      { text: "என்னை விசாரிக்கும் நல் தகப்பனவர்", times: 2 },
-    ],
+    lines: maravenChorusLines,
   },
   chorusFrequency: "afterEachStanza",
   startWithChorus: false,
@@ -138,6 +186,7 @@ export const maraven: Song = {
         { text: "Aaa Aaa Aaa", singer: "boys", textClassName: "small-text" },
       ],
     },
+    maravenInterlude,
     {
       lines: [
         { text: "வெள்ளம் போல் சத்ரு எதிர்த்து வந்தாலும்" },
@@ -158,7 +207,7 @@ export const maraven: Song = {
           singer: "boys",
           alternateLines: { boys: "நேசரே" },
         },
-        { text: "இனியும் உதவி செய்ய வல்லவரே" },
+        { text: "இனியும் உதவி செய்ய வல்லவரே", times: 2 },
         {
           singer: "boys",
           text: "Aaa Aaa Aaa",
@@ -166,7 +215,9 @@ export const maraven: Song = {
         },
       ],
     },
+    maravenInterlude,
     {
+      noNextChorus: true,
       lines: [
         { text: "பகைஞர் எதிரே எனக்கு ஓர் பந்தி" },
         {
@@ -186,7 +237,7 @@ export const maraven: Song = {
           singer: "boys",
           alternateLines: { boys: "செய்து" },
         },
-        { text: "என் பாத்திரம் நிரம்பி வழிய செய்கின்றீர்" },
+        { text: "என் பாத்திரம் நிரம்பி வழிய செய்கின்றீர்", times: 2 },
         {
           singer: "boys",
           text: "Aaa Aaa Aaa",
@@ -194,17 +245,37 @@ export const maraven: Song = {
         },
       ],
     },
+    {
+      noNextChorus: true,
+      lines: [
+        ...maravenChorusLines,
+        { text: "என்னை விசாரிக்கும் நல் தகப்பனவர்", times: 3 },
+      ],
+    },
   ],
 }
 
 export const dhayavu: Song = {
   title: "தயவு",
+  intro: {
+    lines: [
+      { text: "[ INTRO ]" },
+      {
+        text: "Oooooooo.....", times: 2
+      },
+      {
+        text: "Mmmm Mmmm.....", times: 2
+      },
+    ],
+  },
   chorus: {
     lines: [
       { text: "உங்க தயவு பெரியதே" },
       { text: "உங்க தயவு சிறந்ததே" },
-      { text: "உங்க தயவு என்னை சேதமின்றி பாதுகாத்ததே" },
+      { text: "உங்க தயவு என்னை சேதமின்றி பாதுகாத்ததே", times: 2 },
       { text: "ஒரு சேதமின்றி தலைமுறையாய் பாதுகாத்ததே" },
+      { text: "தலைமுறைகள் தாண்டி நிற்கும் தயவு" },
+        { text: "தலை நிமிர்ந்து வாழ செய்யும் தயவு", },
     ],
   },
   chorusFrequency: "afterEachStanza",
@@ -237,6 +308,28 @@ export const dhayavu: Song = {
         { text: "என்னை உயர உயர கொண்டு செல்லுதே" },
       ],
     },
+    {
+      noNextChorus: true,
+      lines: [
+        { text: "தலைமுறைகள் தாண்டி நிற்கும் தயவு" },
+        { text: "(என்) தலை நிமிர்ந்து வாழ செய்யும் தயவு", times: 2 },
+        { text: "பாரபட்சம் பார்க்காத தயவு" },
+        { text: "எளியவனை உயர்த்தி வைக்கும் தயவு" },
+        { text: "தலைமுறைகள் தாண்டி நிற்கும் தயவு" },
+      ],
+    },
+    {
+      noNextChorus: true,
+      lines: [
+        { text: "[ OUTRO ]" },
+        {
+          text: "Oooooooo.....", times: 2
+        },
+        {
+          text: "Mmmm Mmmmm.....", times: 2
+        },
+      ],
+    }
   ],
 }
 
@@ -252,7 +345,7 @@ export const aseervadham: Song = {
         { text: "அவர் முகத்தை நம்மேல் பிரகாசிப்பார்" },
         { text: "நம்மை காப்பார்" },
         { text: "கிருபையால் மறைப்பார்" },
-        { text: "சமாதானம் தருவார்" },
+        { text: "சமாதானம் தருவார்", times: 2 },
       ],
     },
     {
