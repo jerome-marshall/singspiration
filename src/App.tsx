@@ -10,52 +10,65 @@ import {
   sarvaSirushtikum,
 } from "./data/songs"
 import { useState } from "react"
+import AudienceSongComponent from "./components/AudienceSongComponent"
+import { Button } from "./components/ui/button"
 
 function App() {
   const [state, setState] = useState<Reveal.RevealState>()
   console.log("🚀 ~ App ~ state:", state)
 
+  const [view, setView] = useState<"audience" | "choir" | undefined>()
+
   const width = "100%"
 
-  // switch (state?.indexh) {
-  //   case 0:
-  //     // karthaneEnThunai
-  //     width = 1200
-  //     break
-  //   case 1:
-  //     // adhiMangalaKararane
-  //     width = 1300
-  //     break
-  //   case 2:
-  //     // maraven
-  //     width = 1400
-  //     break
-  //   case 3:
-  //     // dhayavu
-  //     width = 1400
-  //     break
-  // }
+  const songList = [
+    karthaneEnThunai,
+    adhiMangalaKararane,
+    maraven,
+    dhayavu,
+    aseervadham,
+    sarvaSirushtikum,
+  ]
+
+  const Song = view === "choir" ? SongComponent : AudienceSongComponent
 
   return (
     <div style={{ height: "100vh", width: "100vw" }}>
-      <RevealSlides
-        theme="white"
-        controlsLayout="bottom-right"
-        onStateChange={(newState) => {
-          setState(newState)
-        }}
-        progress
-        slideNumber
-        width={width}
-        height={"100%"}
-      >
-        <SongComponent song={karthaneEnThunai} />
-        <SongComponent song={adhiMangalaKararane} />
-        <SongComponent song={maraven} />
-        <SongComponent song={dhayavu} />
-        <SongComponent song={aseervadham} />
-        <SongComponent song={sarvaSirushtikum} />
-      </RevealSlides>
+      {!view ? (
+        <div className="flex justify-center gap-6 items-center size-full">
+          <Button
+            onClick={() => setView("choir")}
+            size={"lg"}
+            className="text-lg"
+          >
+            Choir
+          </Button>
+          <Button
+            onClick={() => setView("audience")}
+            size={"lg"}
+            variant={"outline"}
+            className="text-lg"
+          >
+            Audience
+          </Button>
+        </div>
+      ) : (
+        <RevealSlides
+          theme="white"
+          controlsLayout="bottom-right"
+          onStateChange={(newState) => {
+            setState(newState)
+          }}
+          progress
+          slideNumber
+          width={width}
+          height={"100%"}
+        >
+          {songList.map((song, index) => (
+            <Song key={index} song={song} />
+          ))}
+        </RevealSlides>
+      )}
     </div>
   )
 }

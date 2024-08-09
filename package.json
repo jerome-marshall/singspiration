@@ -10,14 +10,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.1.0",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "lucide-react": "^0.427.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-reveal-slides": "bouzidanas/react-reveal-slides",
     "reveal.js": "^5.1.0",
-    "tailwind-merge": "^2.4.0"
+    "tailwind-merge": "^2.4.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/node": "^22.1.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/reveal.js": "^5.0.3",
@@ -28,8 +33,8 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
-    "postcss": "^8.4.40",
-    "tailwindcss": "^3.4.7",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.9",
     "typescript": "^5.2.2",
     "vite": "^5.3.4"
   }

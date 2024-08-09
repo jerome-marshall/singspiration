@@ -54,6 +54,7 @@ export const karthaneEnThunai: Song = {
       ],
     },
     {
+      type: "outro",
       noNextChorus: true,
       lines: [
         {
@@ -70,7 +71,7 @@ export const karthaneEnThunai: Song = {
           times: 2,
         },
       ],
-    }
+    },
   ],
 }
 
@@ -102,6 +103,7 @@ export const adhiMangalaKararane: Song = {
   },
   stanzas: [
     {
+      type: "interlude",
       lines: [
         { text: "ச நீ ச நீ ச க", singer: "girls" },
         {
@@ -115,7 +117,7 @@ export const adhiMangalaKararane: Song = {
           singer: "girls2",
           alternateLines: { boys: "ப ம க" },
         },
-        { text: "ப த நீ த ச ரி நீ" , singer: "girls"},
+        { text: "ப த நீ த ச ரி நீ", singer: "girls" },
         { text: "ச ரி க ப ப த நீ ரி ச", times: 2, singer: "boys" },
       ],
     },
@@ -129,8 +131,8 @@ export const adhiMangalaKararane: Song = {
         { text: "அதி மங்கல காரணனே!", times: 2 },
       ],
     },
-
     {
+      interlude: true,
       lines: [
         { text: "முடி மன்னர்கள் மேடையையும்" },
         { text: "மிகு உன்னத வீடதையும்", times: 2 },
@@ -143,17 +145,15 @@ export const adhiMangalaKararane: Song = {
   ],
 }
 
-const tatTara = {
+const tatTara: Line = {
   text: "tat tara tat tara",
   singer: "boys",
   textClassName: "small-text",
+  type: "vocals",
 }
 const maravenInterlude: Stanza = {
   type: "interlude",
   lines: [
-    {
-      text: "[ INTERLUDE ]",
-    },
     {
       text: "La la la la la",
       times: 4,
@@ -176,42 +176,52 @@ export const maraven: Song = {
   stanzas: [
     {
       lines: [
-        { text: "தாயின் வயிற்றில் தோன்றின நாள்முதல்" },
+        { text: "தாயின் வயிற்றில் தோன்றின நாள்முதல்", singer: "girls" },
         { ...tatTara, singer: "boys" },
-        { text: "என்னை ஏந்தி சுமந்து காத்த தேவனே" },
+        { text: "என்னை ஏந்தி சுமந்து காத்த தேவனே", singer: "girls" },
         { ...tatTara, singer: "boys" },
-        { text: "(உம்) உள்ளங்கைகளில் என்னை வரைந்து" },
+        { text: "(உம்) உள்ளங்கைகளில் என்னை வரைந்து", singer: "girls" },
         { ...tatTara, singer: "boys" },
-        { text: "உன்தன் கண்மணி போலென்னை காக்கின்றீர்", times: 2 },
-        { text: "Aaa Aaa Aaa", singer: "boys", textClassName: "small-text" },
+        {
+          text: "உன்தன் கண்மணி போலென்னை காக்கின்றீர்",
+          times: 2,
+          singer: "girls",
+        },
+        {
+          text: "Aaa Aaa Aaa",
+          singer: "boys",
+          textClassName: "small-text",
+          type: "vocals",
+        },
       ],
     },
     maravenInterlude,
     {
       lines: [
-        { text: "வெள்ளம் போல் சத்ரு எதிர்த்து வந்தாலும்" },
+        { text: "வெள்ளம் போல் சத்ரு எதிர்த்து வந்தாலும்", singer: "girls" },
         {
           ...tatTara,
           singer: "boys",
           alternateLines: { boys: "வந்தாலும்" },
         },
-        { text: "(தேவ)(ஆவி)யானவர் எனக்காய் கொடியேற்றுவீர்" },
+        { text: "(தேவ)(ஆவி)யானவர் எனக்காய் கொடியேற்றுவீர்", singer: "girls" },
         {
           ...tatTara,
           singer: "boys",
           alternateLines: { boys: "கொடியேற்றுவீர்" },
         },
-        { text: "இதுவரை உதவி செய்த நேசரே" },
+        { text: "இதுவரை உதவி செய்த நேசரே", singer: "girls" },
         {
           ...tatTara,
           singer: "boys",
           alternateLines: { boys: "நேசரே" },
         },
-        { text: "இனியும் உதவி செய்ய வல்லவரே", times: 2 },
+        { text: "இனியும் உதவி செய்ய வல்லவரே", times: 2, singer: "girls" },
         {
           singer: "boys",
           text: "Aaa Aaa Aaa",
           textClassName: "small-text",
+          type: "vocals",
         },
       ],
     },
@@ -219,29 +229,34 @@ export const maraven: Song = {
     {
       noNextChorus: true,
       lines: [
-        { text: "பகைஞர் எதிரே எனக்கு ஓர் பந்தி" },
+        { text: "பகைஞர் எதிரே எனக்கு ஓர் பந்தி", singer: "girls" },
         {
           ...tatTara,
           singer: "boys",
           alternateLines: { boys: "ஓர் பந்தி" },
         },
-        { text: "ஆயத்தம் செய்த சர்வ வல்லவரே" },
+        { text: "ஆயத்தம் செய்த சர்வ வல்லவரே", singer: "girls" },
         {
           ...tatTara,
           singer: "boys",
           alternateLines: { boys: "வல்லவரே" },
         },
-        { text: "எண்ணையால் என்னை அபிஷேகம் செய்து" },
+        { text: "எண்ணையால் என்னை அபிஷேகம் செய்து", singer: "girls" },
         {
           ...tatTara,
           singer: "boys",
           alternateLines: { boys: "செய்து" },
         },
-        { text: "என் பாத்திரம் நிரம்பி வழிய செய்கின்றீர்", times: 2 },
+        {
+          text: "என் பாத்திரம் நிரம்பி வழிய செய்கின்றீர்",
+          times: 2,
+          singer: "girls",
+        },
         {
           singer: "boys",
           text: "Aaa Aaa Aaa",
           textClassName: "small-text",
+          type: "vocals",
         },
       ],
     },
@@ -261,10 +276,12 @@ export const dhayavu: Song = {
     lines: [
       { text: "[ INTRO ]" },
       {
-        text: "Oooooooo.....", times: 2
+        text: "Oooooooo.....",
+        times: 2,
       },
       {
-        text: "Aa Aaaa.....", times: 4
+        text: "Aa Aaaa.....",
+        times: 4,
       },
     ],
   },
@@ -275,7 +292,7 @@ export const dhayavu: Song = {
       { text: "உங்க தயவு என்னை சேதமின்றி பாதுகாத்ததே", times: 2 },
       { text: "ஒரு சேதமின்றி தலைமுறையாய் பாதுகாத்ததே" },
       { text: "தலைமுறைகள் தாண்டி நிற்கும் தயவு" },
-        { text: "தலை நிமிர்ந்து வாழ செய்யும் தயவு", },
+      { text: "தலை நிமிர்ந்து வாழ செய்யும் தயவு" },
     ],
   },
   chorusFrequency: "afterEachStanza",
@@ -291,6 +308,7 @@ export const dhayavu: Song = {
       ],
     },
     {
+      interlude: true,
       lines: [
         { text: "(எனை) குறிபார்த்து எறியப்பட்ட சவுலின் அம்புகள்" },
         { text: "திசை மாறி போக செய்த தயவு பெரியதே", times: 2 },
@@ -300,12 +318,22 @@ export const dhayavu: Song = {
       ],
     },
     {
+      interlude: true,
       lines: [
         { text: "சுற்றி நின்ற ஜலங்கள் எல்லாம் அமிழ்ந்து போனதே" },
         { text: "என் பேழை மட்டும் பத்திரமாய் மலையில் நின்றதே", times: 2 },
         { text: "மூழ்கும் என்று எதிர்பார்த்த கண்கள் தோற்றதே" },
         { text: "ஏறெடுத்து பார்க்கும் வண்ணம் உயர்த்தி வைத்ததே" },
         { text: "என்னை உயர உயர கொண்டு செல்லுதே" },
+      ],
+    },
+    {
+      noNextChorus: true,
+      lines: [
+        { text: "உங்க தயவு பெரியதே" },
+        { text: "உங்க தயவு சிறந்ததே" },
+        { text: "உங்க தயவு என்னை சேதமின்றி பாதுகாத்ததே", times: 2 },
+        { text: "ஒரு சேதமின்றி தலைமுறையாய் பாதுகாத்ததே" },
       ],
     },
     {
@@ -323,21 +351,46 @@ export const dhayavu: Song = {
       lines: [
         { text: "[ OUTRO ]" },
         {
-          text: "Oooooooo.....", times: 2
+          text: "Oooooooo.....",
+          times: 2,
         },
         {
-          text: "Aa Aaaaa.....", times: 4
+          text: "Aa Aaaaa.....",
+          times: 4,
         },
       ],
-    }
+    },
   ],
 }
 
+const avarDhayavu = ({ singer }: { singer?: "boys" | "girls" }) => {
+  return [
+    {
+      lines: [
+        { text: "அவர் தயவு நம்மேலே", singer },
+        { text: "நம் குடும்பங்கள் மேலே", singer },
+        { text: "நம் பிள்ளைகள் மேலே", singer },
+        { text: "நம் சந்ததிகள் மேலே", singer },
+      ],
+    },
+    {
+      lines: [
+        { text: "அவர் சமூகம் நம் முன்னே", singer },
+        { text: "நம் அருகே நம் பின்னே", singer },
+        { text: "அவர் பிரசன்னம் நம்மை மூடுதே", singer },
+        { text: "அவர் என்றும் நம்மோடே", singer },
+      ],
+    },
+  ]
+}
+const amen = {
+  lines: [{ text: "ஆமென், ஆமென், ஆமென்", times: 2 }],
+}
 export const aseervadham: Song = {
   title: "ஆசீர்வாதம் [The Blessing]",
   stanzas: [
     {
-      lines: [{ text: "ஆமென், ஆமென், ஆமென்" , times: 2}],
+      lines: [{ text: "ஆமென், ஆமென், ஆமென்", times: 2 }],
     },
     {
       lines: [
@@ -348,44 +401,13 @@ export const aseervadham: Song = {
         { text: "சமாதானம் தருவார்", times: 2 },
       ],
     },
-    {
-      lines: [{ text: "ஆமென், ஆமென், ஆமென்" }],
-    },
-    {
-      lines: [
-        { text: "அவர் தயவு நம்மேலே" },
-        { text: "நம் குடும்பங்கள் மேலே" },
-        { text: "நம் பிள்ளைகள் மேலே" },
-        { text: "நம் சந்ததிகள் மேலே" },
-      ],
-    },
-    {
-      lines: [
-        { text: "அவர் சமூகம் நம் முன்னே" },
-        { text: "நம் அருகே நம் பின்னே" },
-        { text: "அவர் பிரசன்னம் நம்மை மூடுதே" },
-        { text: "அவர் என்றும் நம்மோடே" },
-      ],
-    },
-    {
-      lines: [
-        { text: "அவர் தயவு நம்மேலே" },
-        { text: "நம் குடும்பங்கள் மேலே" },
-        { text: "நம் பிள்ளைகள் மேலே" },
-        { text: "நம் சந்ததிகள் மேலே" },
-      ],
-    },
-    {
-      lines: [
-        { text: "அவர் சமூகம் நம் முன்னே" },
-        { text: "நம் அருகே நம் பின்னே" },
-        { text: "அவர் பிரசன்னம் நம்மை மூடுதே" },
-        { text: "அவர் என்றும் நம்மோடே" },
-      ],
-    },
-    {
-      lines: [{ text: "ஆமென், ஆமென், ஆமென்", times: 2 }],
-    },
+    amen,
+    ...avarDhayavu({}),
+    ...avarDhayavu({}),
+    amen,
+    ...avarDhayavu({ singer: "boys" }),
+    ...avarDhayavu({ singer: "boys" }),
+    amen,
   ],
   chorus: null,
 }
@@ -398,23 +420,25 @@ export const sarvaSirushtikum: Song = {
         { text: "சர்வ சிருஷ்டிக்கும் எஜமானன் நீரே" },
         { text: "சர்வ சிருஷ்டியை காப்பவர் நீரே" },
         { text: "எங்கள் இதயத்தில் உம்மைப் போற்றிடுவோம்" },
-        { text: "என்றென்றும் பணீந்து தொழுவோம்" },
+        { text: "என்றென்றும் பணீந்து தொழுவோம்", times: 2 },
       ],
     },
     {
+      interlude: true,
       lines: [
         { text: "வானம் பூமி ஒழிந்து போனாலும்" },
         { text: "உம் வார்த்தை என்றும் மாறா" },
         { text: "இல்வாழிக்கை அழிந்து மறைந்துபோம்" },
-        { text: "விசுவாசி என்றும் நிலைய்ப்பான்" },
+        { text: "விசுவாசி என்றென்றும் நிலைய்ப்பான்", times: 2 },
       ],
     },
     {
+      interlude: true,
       lines: [
         { text: "கர்த்தர் கரத்தின் கிரியைகள் நாங்கள்" },
         { text: "கிருபை எங்கள் மேல் ஊற்றுவீரே" },
         { text: "ஆவி ஆத்துமா சரீரம் உம் சொந்தமே" },
-        { text: "அதை சாத்தான் தொடாமல் காப்பீரே" },
+        { text: "சாத்தான் தொடராமல் காப்பீர்", times: 2 },
       ],
     },
   ],

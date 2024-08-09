@@ -42,12 +42,22 @@ const SongComponent: React.FC<SongProps> = ({ song }) => {
   }
 
   const renderStanza = (stanza: Stanza, index: number) => {
+    const hasInterludeBefore =
+      typeof stanza.interlude === "boolean" && stanza.interlude
     return (
-      <section key={`stanza-${index}`} className="stanza">
-        {stanza.lines.map((line, lineIndex) => (
-          <React.Fragment key={lineIndex}>{renderLine(line)}</React.Fragment>
-        ))}
-      </section>
+      <>
+        {hasInterludeBefore && (
+          <section key={`stanza-${index}`} className="stanza">
+            {renderLine({ text: "[ INTERLUDE ]" })}
+          </section>
+        )}
+        <section key={`stanza-${index}`} className="stanza">
+          {stanza.type === "interlude" && renderLine({ text: "[ INTERLUDE ]" })}
+          {stanza.lines.map((line, lineIndex) => (
+            <React.Fragment key={lineIndex}>{renderLine(line)}</React.Fragment>
+          ))}
+        </section>
+      </>
     )
   }
 

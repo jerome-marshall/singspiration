@@ -12,7 +12,8 @@ export interface Stanza {
   lines: Line[]
   times?: number
   noNextChorus?: boolean
-  type?: "stanza" | "interlude" | "bridge" | "vocals"
+  type?: "stanza" | "interlude" | "bridge" | "vocals" | "intro" | "outro"
+  interlude?: Stanza | boolean
 }
 
 export interface Chorus {
@@ -35,6 +36,7 @@ export interface Ending {
 
 export interface Line {
   text: string
+  type?: "vocals"
   times?: number
   textClassName?: string
   singer?: "all" | "boys" | "girls" | "girls2" | "girls1"
