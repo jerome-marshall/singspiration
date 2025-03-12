@@ -1,17 +1,18 @@
+import { useState } from "react"
 import { RevealSlides } from "react-reveal-slides"
 import "./App.css"
-import SongComponent from "./components/SongComponent"
-import {
-  adhiMangalaKararane,
-  aseervadham,
-  dhayavu,
-  karthaneEnThunai,
-  maraven,
-  sarvaSirushtikum,
-} from "./data/songs"
-import { useState } from "react"
 import AudienceSongComponent from "./components/AudienceSongComponent"
+import SongComponent from "./components/SongComponent"
 import { Button } from "./components/ui/button"
+import {
+  kalvariMaMalai,
+  oivunaalKarpanai,
+  oruSanthathiAvarai,
+  sugamVanthadu,
+  vaanangalayum,
+  varugaiKaana,
+  yesuvinAnbinai,
+} from "./data/songs"
 
 function App() {
   const [state, setState] = useState<Reveal.RevealState>()
@@ -22,12 +23,13 @@ function App() {
   const width = "100%"
 
   const songList = [
-    karthaneEnThunai,
-    adhiMangalaKararane,
-    maraven,
-    dhayavu,
-    aseervadham,
-    sarvaSirushtikum,
+    vaanangalayum,
+    oruSanthathiAvarai,
+    oivunaalKarpanai,
+    sugamVanthadu,
+    kalvariMaMalai,
+    yesuvinAnbinai,
+    varugaiKaana,
   ]
 
   const Song = view === "choir" ? SongComponent : AudienceSongComponent
