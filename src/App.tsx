@@ -13,9 +13,10 @@ import {
   varugaiKaana,
   yesuvinAnbinai,
 } from "./data/songs"
+import { RevealState } from "reveal.js"
 
 function App() {
-  const [state, setState] = useState<Reveal.RevealState>()
+  const [state, setState] = useState<RevealState>()
   console.log("🚀 ~ App ~ state:", state)
 
   const [view, setView] = useState<"audience" | "choir" | undefined>()
@@ -58,7 +59,7 @@ function App() {
         <RevealSlides
           theme="white"
           controlsLayout="bottom-right"
-          onStateChange={(newState) => {
+          onStateChange={(newState: RevealState) => {
             setState(newState)
           }}
           progress
