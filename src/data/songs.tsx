@@ -270,6 +270,15 @@ export const oruSanthathiAvarai: Song = {
         { text: "இயேசுவை அறிவிக்கும்‌ சந்ததி - இது" },
         { text: "இரக்கம்‌ நிறைந்த சந்ததி", times: 2 },
       ],
+      noNextChorus: true,
+    },
+    {
+      lines: [
+        { text: "சந்ததி... சந்ததி... சந்ததி..." },
+        { text: "ஒரு சந்ததி அவரை சேவிக்கும்..." },
+        { text: "சந்ததி... சந்ததி... சந்ததி..." },
+        { text: "ஒரு சந்ததி அவரை சேவிக்கும்..." },
+      ],
     },
   ],
   chorusFrequency: "afterEachStanza",
