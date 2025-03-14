@@ -279,6 +279,7 @@ export const oruSanthathiAvarai: Song = {
         { text: "சந்ததி... சந்ததி... சந்ததி..." },
         { text: "ஒரு சந்ததி அவரை சேவிக்கும்..." },
       ],
+      noNextChorus: true,
     },
   ],
   chorusFrequency: "afterEachStanza",
